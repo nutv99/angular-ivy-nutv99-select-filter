@@ -1,0 +1,30 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+<div style="width:400px;">
+  <div style="display:flex;align-items:center">
+    <input
+      type="text"
+      style="width:100%;padding:10px; box-sizing: border-box; outline:none"
+      (input)="FilterHeroes($event)"
+      (focus)="setshowList()"
+      (blur)="hideList()"
+    />
+    <div style="border:1px solid gray;padding:4px;border-left:0px">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/5255/5255173.png"
+        alt=""
+        style="width:25px;height:25px"
+      />
+    </div>
+  </div>
+  <div
+    style="border:1px solid gray;width:400px;height:300px; 
+    border-top:0px solid gray;
+    box-sizing: border-box;"
+    *ngIf="showList"
+  >
+    <li *ngFor="let hero of heroesB">
+      {{ hero.name }}
+    </li>
+  </div>
+</div>
