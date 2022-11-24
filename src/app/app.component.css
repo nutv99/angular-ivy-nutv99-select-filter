@@ -1,3 +1,26 @@
 p {
   font-family: Lato;
 }
+li:hover {
+  background: lightgreen;
+}
+
+.closeFrame {
+  animation: myHeight 5s 1;
+}
+
+@keyframes myHeight {
+  from {
+    height: 300px;
+  }
+  to {
+    height: 0px;
+  }
+}
+
+.bb {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/5255/5255173.png');
+  background-size: 25px 25px;
+  background-position: 95% center;
+  background-repeat: no-repeat;
+}

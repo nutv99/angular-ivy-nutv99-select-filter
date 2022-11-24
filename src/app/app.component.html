@@ -4,22 +4,25 @@
   <div style="display:flex;align-items:center">
     <input
       type="text"
-      style="width:100%;padding:10px; box-sizing: border-box; outline:none"
+      style="width:100%;padding:11px; outline:none;border:1px solid lightgray;border-right:0px solid gray;border-radius:6px 0px 0px 0px"
       (input)="FilterHeroes($event)"
       (focus)="setshowList()"
       [(ngModel)]="myData"
     />
-    <div style="border:1px solid gray;padding:4px;border-left:0px">
+    <div
+      style="border:1px solid lightgray;padding:4px;border-left:0px;border-radius:0px 4px 0px 0px"
+    >
       <img
         src="https://cdn-icons-png.flaticon.com/512/5255/5255173.png"
         alt=""
         style="width:25px;height:25px"
+        (click)="hideList()"
       />
     </div>
   </div>
   <div
-    style="border:1px solid gray;width:400px;height:300px; 
-    border-top:0px solid gray;
+    style="border:1px solid lightgray;width:400px;height:300px; 
+    border-top:0px solid lightgray;
     box-sizing: border-box;"
     *ngIf="showList"
   >

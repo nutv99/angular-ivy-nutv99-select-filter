@@ -8,6 +8,7 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
   showList: boolean = false;
+  id: number = -99;
   heroesA = [
     { id: 1, name: 'Superman' },
     { id: 2, name: 'Batman' },
@@ -39,8 +40,11 @@ export class AppComponent {
     console.log(this.heroesA.length, ' vs ', this.heroesB.length);
     if (this.heroesA.length != this.heroesB.length) {
       this.myData = this.heroesB[e].name;
+      this.id = this.heroesB[e].id;
     } else {
       this.myData = this.heroesA[e].name;
+      this.id = this.heroesA[e].id;
     }
+    this.hideList();
   }
 }
