@@ -1,13 +1,14 @@
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
-<div style="width:400px;">
+<div style="width:400px;" (blur)="hideList()">
   <div style="display:flex;align-items:center">
     <input
       type="text"
       style="width:100%;padding:10px; box-sizing: border-box; outline:none"
       (input)="FilterHeroes($event)"
       (focus)="setshowList()"
-      (blur)="hideList()"
+      [(ngModel)] = 'myData'
+      
     />
     <div style="border:1px solid gray;padding:4px;border-left:0px">
       <img
@@ -23,7 +24,7 @@
     box-sizing: border-box;"
     *ngIf="showList"
   >
-    <li *ngFor="let hero of heroesB">
+    <li *ngFor="let hero of heroesB" (click)='setToList($event)' style='padding:10px;cursor:pointer'>
       {{ hero.name }}
     </li>
   </div>

@@ -15,6 +15,7 @@ export class AppComponent {
     { id: 3, name: 'Robin' },
     { id: 4, name: 'Flash' },
   ];
+  myData: string = '';
 
   heroesB = this.heroesA;
 
@@ -32,5 +33,9 @@ export class AppComponent {
 
   setshowList() {
     this.showList = true;
+  }
+
+  setToList(e: any) {
+    this.myData = e;
   }
 }
