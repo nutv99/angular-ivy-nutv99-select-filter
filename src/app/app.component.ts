@@ -36,8 +36,11 @@ export class AppComponent {
   }
 
   setToList(e: any) {
-
-    console.log(e);
-    this.myData = e.target.value;
+    console.log(this.heroesA.length, ' vs ', this.heroesB.length);
+    if (this.heroesA.length != this.heroesB.length) {
+      this.myData = this.heroesB[e].name;
+    } else {
+      this.myData = this.heroesA[e].name;
+    }
   }
 }

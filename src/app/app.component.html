@@ -4,7 +4,7 @@
   <div style="display:flex;align-items:center">
     <input
       type="text"
-      style="width:100%;padding:10px; box-sizing: border-box; outline:none;"
+      style="width:100%;padding:10px; box-sizing: border-box; outline:none"
       (input)="FilterHeroes($event)"
       (focus)="setshowList()"
       [(ngModel)]="myData"
@@ -24,10 +24,9 @@
     *ngIf="showList"
   >
     <li
-      *ngFor="let hero of heroesB"
-      (click)="setToList($event)"
+      *ngFor="let hero of heroesB; let i = index"
+      (click)="setToList(i)"
       style="padding:10px;cursor:pointer"
-      value="{hero.id}"
     >
       {{ hero.name }}
     </li>
