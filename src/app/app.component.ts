@@ -36,6 +36,8 @@ export class AppComponent {
   }
 
   setToList(e: any) {
-    this.myData = e;
+
+    console.log(e);
+    this.myData = e.target.value;
   }
 }

@@ -4,11 +4,10 @@
   <div style="display:flex;align-items:center">
     <input
       type="text"
-      style="width:100%;padding:10px; box-sizing: border-box; outline:none"
+      style="width:100%;padding:10px; box-sizing: border-box; outline:none;"
       (input)="FilterHeroes($event)"
       (focus)="setshowList()"
-      [(ngModel)] = 'myData'
-      
+      [(ngModel)]="myData"
     />
     <div style="border:1px solid gray;padding:4px;border-left:0px">
       <img
@@ -24,7 +23,12 @@
     box-sizing: border-box;"
     *ngIf="showList"
   >
-    <li *ngFor="let hero of heroesB" (click)='setToList($event)' style='padding:10px;cursor:pointer'>
+    <li
+      *ngFor="let hero of heroesB"
+      (click)="setToList($event)"
+      style="padding:10px;cursor:pointer"
+      value="{hero.id}"
+    >
       {{ hero.name }}
     </li>
   </div>
